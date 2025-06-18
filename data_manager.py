@@ -16,6 +16,18 @@ DEFAULT_DATA = {
     ]
 }
 
+# 기본 연구과제명 목록 추가
+DEFAULT_PROJECT_NAMES = [
+    "해양환경 모니터링 시스템 구축",
+    "수질 개선 기술 개발",
+    "해양생태계 보전 연구",
+    "연안 관리 시스템 개발",
+    "해양오염 방지 기술 연구",
+    "해양바이오 기술 개발",
+    "해양에너지 활용 연구",
+    "해양안전 기술 개발"
+]
+
 def load_data():
     """데이터 파일에서 데이터를 로드하거나 기본 데이터를 반환"""
     try:
@@ -113,11 +125,11 @@ def load_project_names():
             project_names = df.iloc[:, 0].dropna().tolist()
             return project_names
         else:
-            print(f"'{PROJECT_NAMES_FILE}' 파일이 존재하지 않습니다.")
-            return []
+            print(f"'{PROJECT_NAMES_FILE}' 파일이 존재하지 않습니다. 기본 연구과제명을 사용합니다.")
+            return DEFAULT_PROJECT_NAMES.copy()
     except Exception as e:
-        print(f"연구과제명 로드 오류: {e}")
-        return []
+        print(f"연구과제명 로드 오류: {e}. 기본 연구과제명을 사용합니다.")
+        return DEFAULT_PROJECT_NAMES.copy()
 
 def get_all_data():
     """모든 데이터를 통합하여 반환 (기본 데이터 + 연구과제명)"""
