@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 출장보고서 자동화 시스템
 
 ## 📋 개요
@@ -85,3 +86,24 @@ streamlit run main.py
 - 개발자: NEB AI 데이터팀
 - 버전: v1.0
 - 최종 수정일: 2025.06.17
+=======
+# 🎈 Blank app template
+
+A simple Streamlit app template for you to modify!
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+
+### How to run it on your own machine
+
+1. Install the requirements
+
+   ```
+   $ pip install -r requirements.txt
+   ```
+
+2. Run the app
+
+   ```
+   $ streamlit run streamlit_app.py
+   ```
+>>>>>>> a50529b87c11e0b405ba292716adaa830994b8d8

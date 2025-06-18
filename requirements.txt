@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 streamlit>=1.28.0
 openpyxl>=3.1.2
 pandas>=1.5.0
+=======
+streamlit
+>>>>>>> a50529b87c11e0b405ba292716adaa830994b8d8
