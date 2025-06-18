@@ -1,0 +1,59 @@
+# 회사 보안 데이터 파일들
+*.csv
+*.json
+business_trip_data.json
+
+# Python 관련 파일들
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Streamlit 캐시 및 설정
+.streamlit/
+
+# 환경 설정 파일
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE 설정 파일
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 로그 파일
+*.log
+
+# 임시 파일
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Excel 임시 파일
+~$*.xlsx
+~$*.xls 
