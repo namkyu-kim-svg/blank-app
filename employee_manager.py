@@ -2,6 +2,15 @@ import pandas as pd
 import os
 from datetime import datetime, date
 
+# 기본 직원 데이터 (CSV 파일이 없을 때 사용)
+DEFAULT_EMPLOYEE_DATA = [
+    {"이름": "김철수", "직급": "선임연구원", "일비": 50000, "식비": 20000},
+    {"이름": "이영희", "직급": "책임연구원", "일비": 60000, "식비": 25000},
+    {"이름": "박민수", "직급": "주임연구원", "일비": 45000, "식비": 18000},
+    {"이름": "최수진", "직급": "연구원", "일비": 40000, "식비": 15000},
+    {"이름": "정현우", "직급": "선임연구원", "일비": 50000, "식비": 20000}
+]
+
 class EmployeeManager:
     """직원 정보 및 출장비 관리 클래스"""
     
@@ -10,7 +19,7 @@ class EmployeeManager:
         self.employee_data = self.load_employee_data()
     
     def load_employee_data(self):
-        """CSV 파일에서 직원 데이터 로드"""
+        """CSV 파일에서 직원 데이터 로드 또는 기본 데이터 사용"""
         try:
             if os.path.exists(self.csv_file):
                 df = pd.read_csv(self.csv_file, encoding='cp949')
@@ -24,11 +33,12 @@ class EmployeeManager:
                 
                 return df
             else:
-                print(f"파일을 찾을 수 없습니다: {self.csv_file}")
-                return pd.DataFrame()
+                print(f"파일을 찾을 수 없습니다: {self.csv_file}. 기본 직원 데이터를 사용합니다.")
+                # 기본 데이터로 DataFrame 생성
+                return pd.DataFrame(DEFAULT_EMPLOYEE_DATA)
         except Exception as e:
-            print(f"데이터 로드 오류: {e}")
-            return pd.DataFrame()
+            print(f"데이터 로드 오류: {e}. 기본 직원 데이터를 사용합니다.")
+            return pd.DataFrame(DEFAULT_EMPLOYEE_DATA)
     
     def get_employee_names(self):
         """전체 직원 이름 리스트 반환"""
